@@ -6,7 +6,7 @@ docker pull nginx
 
 # docker pull nginx:latest와 동일함. 
 # :tag 로 특정 버전 다운로드.
-# Dockerhub 에서 받는 것! github이나 npm 같은 느낌
+# Dockerhub 에서 받는 것! github나 npm 같은 느낌
 ```
  
 
