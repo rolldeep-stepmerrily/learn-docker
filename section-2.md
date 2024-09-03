@@ -36,8 +36,9 @@ docker image rm -f [imageId]
 docker create [options] [imageName]
 
 # 해당 이미지로 컨테이너를 '생성'만 함. 실행하지않음.
-# 만약 이미지가 없다면 pull 하지않아도 자동으로 다운로드함
-# --name [이름] 옵션 사용하면 이름 지정. 없으면 자동으로 만듦
+# 만약 이미지가 없다면 pull 하지않아도 자동으로 다운로드함.
+# options :
+#    --name [이름] : 이름 지정. 없으면 자동으로 만듦
 ```
 ```bash
 docker ps
