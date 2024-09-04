@@ -68,17 +68,39 @@ mysql> create database mydb; # db 생성
 
 ### 볼륨을 활용해서 MySQL 실행시켜보기
 ```bash
-# 1.
-
 docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=qwer1234! -v [호스트 절대경로]:[컨테이너 절대경로] mysql
 
 
 # windows 환경에서 경로 주의
-#     ex) C:/development/docker-mysql/mysql-data:/var/lib/mysql
+#     ex) C:/docker/mysql/data:/var/lib/mysql
 
 # 최초에 환경 변수가 볼륨에 저장되었기 때문에, 환경변수를 바꾸려면 mysql 내부에서 직접 바꿔야함
 
 # options :
 #     -v : 볼륨 생성(도커 볼륨 명령어 참고)
 
+```
+
+### PostgreSQL 도 실행시켜보기
+```bash
+docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=qwer1234! -v [호스트 절대경로]:[컨테이너 절대경로] --name postgres postgres
+```
+```bash
+# 컨테이너에 접속한 뒤
+
+psql -U postgres
+
+postgres>\l # 데이터베이스 조회
+
+postgres>\dn # 스키마 조회
+
+postgres> create table public.test ( id SERIAL PRIMARY KEY, name VARCHAR(50)); # 테스트 테이블 생성
+
+postgres> \dt public.* # 생성된 테이블 확인
+```
+* 컨테이너를 지웠다 새로 만들어도, 호스트에 데이터를 저장하기 때문에 유지된다.  
+
+### MongoDB 도 실행시켜보기
+```bash
+docker run -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=qwer1234! -p 27017:27017 -v [호스트 절대경로]:[컨테이너 절대경로] -d mongo
 ```
