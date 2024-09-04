@@ -17,14 +17,14 @@
 
 ### 흐름 느껴보기
 ```bash
-#1.
+# 1.
 
 docker pull nginx 
 
 # nginx 라는 이미지를 다운로드
 ```
 ```bash
-#2.
+# 2.
 
 docker image ls 
 
@@ -32,7 +32,7 @@ docker image ls
 ```
 
 ```bash
-#3.
+# 3.
 
 docker run --name webserver -d -p 80:80 nginx 
 
@@ -40,7 +40,7 @@ docker run --name webserver -d -p 80:80 nginx
 ```
 
 ```bash
-#4.
+# 4.
 
 docker ps
 
@@ -48,7 +48,7 @@ docker ps
 ```
 
 ```bash
-#5.
+# 5.
 
 docker stop webserver
 

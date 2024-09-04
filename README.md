@@ -1,5 +1,5 @@
 ## Source
-본 리포지토리는 [JSCODE 박재성](https://www.inflearn.com/users/219533/@jscode)님의 [비전공자도 이해할 수 있는 Docker 입문/실전](https://www.inflearn.com/course/%EB%B9%84%EC%A0%84%EA%B3%B5%EC%9E%90-docker-%EC%9E%85%EB%AC%B8-%EC%8B%A4%EC%A0%84)  
+본 리포지토리는 [JSCODE 박재성](https://www.inflearn.com/users/219533/@jscode)님의 [비전공자도 이해할 수 있는 Docker 입문/실전](https://www.inflearn.com/course/%EB%B9%84%EC%A0%84%EA%B3%B5%EC%9E%90-docker-%EC%9E%85%EB%AC%B8-%EC%8B%A4%EC%A0%84)
 을 수강하며 정리한 것입니다.  
 저작권 문제 있을 시 rolldeep@stepmerrily.com 로 연락부탁드립니다!
 

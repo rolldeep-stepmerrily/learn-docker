@@ -21,3 +21,31 @@ docker run -v [호스트의 디렉토리 절대경로]:[컨테이너의 디렉�
 # 2. 호스트의 디렉토리 절대 경로에 이미 디렉토리가 없을 경우
 # 컨테이너의 디렉토리에 있는 파일들을 호스트의 디렉토리로 복사함.
 ```
+
+
+### Mysql 실행시켜보기
+
+```bash
+# 1.
+
+docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=qwer1234 mysql
+
+# mysql 컨테이너를 3306 포트에서 실행
+
+# options :
+#     -e : 환경변수 설정
+```
+```bash
+# 2. 
+
+docker exec -it [container] [shell]
+
+# mysql 컨테이너 내부에 접속
+```
+```bash
+# 3.
+
+echo $MYSQL_ROOT_PASSWORD
+
+# 환경변수 잘 설정되었는지 확인
+```

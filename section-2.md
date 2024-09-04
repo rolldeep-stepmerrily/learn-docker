@@ -5,8 +5,7 @@
 docker pull nginx
 
 # docker pull nginx:latest와 동일함. 
-# :tag 로 특정 버전 다운로드.
-# Dockerhub 에서 받는 것! github나 npm 같은 느낌
+ 
 ```
  
 
@@ -36,17 +35,14 @@ docker image rm -f [imageId]
 docker create [options] [imageName]
 
 # 해당 이미지로 컨테이너를 '생성'만 함. 실행하지않음.
-# 만약 이미지가 없다면 pull 하지않아도 자동으로 다운로드함.
-
-# options :
-#    --name [이름] : 이름 지정. 없으면 자동으로 만듦
+# 만약 이미지가 없다면 pull 하지않아도 자동으로 다운로드함
+# --name [이름] 옵션 사용하면 이름 지정. 없으면 자동으로 만듦
 ```
 ```bash
 docker ps
 
 # 실행 중인 컨테이너 조회. 
-# options :
-#    -a : 모든 컨테이너 조회.
+# -a 옵션을 사용하면 모든 컨테이너 조회
 ```
 ```bash
 docker start [containerName or containerId]
@@ -112,21 +108,21 @@ docker exec [prefixOptions] [containerName or containerId] [suffixOptions]
 
 ### redis 접속해보기
 ```bash
-#1. 
+# 1.
 
 docker run -d -p 6379:6379 redis
 
 # redis 컨테이너를 6379 포트에서 실행
 ```
 ```bash
-#2.
+# 2.
 
 docker exec -it redis bash
 
 # bash 로 redis를 실행한 container로 접속
-``` 
+```
 ```bash
-#3.
+# 3.
 
 redis-cli
 
@@ -137,4 +133,6 @@ redis-cli
 # 3. del 1 => (integer) 1
 ```
    
-    
+## Memo
+imageId or imageName => [image]  
+containerId or containerName => [container]
