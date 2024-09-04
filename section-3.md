@@ -23,7 +23,7 @@ docker run -v [호스트의 디렉토리 절대경로]:[컨테이너의 디렉�
 ```
 
 
-### Mysql 실행시켜보기
+### MySQL 실행시켜보기
 
 ```bash
 # 1.
@@ -48,4 +48,37 @@ docker exec -it [container] [shell]
 echo $MYSQL_ROOT_PASSWORD
 
 # 환경변수 잘 설정되었는지 확인
+```
+```bash
+# 4.
+
+mysql -u root -p
+
+# 이후에 비밀번호 입력하면 mysql 접근
+```
+```bash
+# 5.
+
+mysql> show databases; # db 확인
+mysql> create database mydb; # db 생성
+```
+* 이후 컨테이너를 지우고 다시 만들면, 'mydb' db가 사라져있음. 
+* 컨테이너 내부에 저장한 데이터가 컨테이너를 지우면서 사라졌기 때문
+* 그래서 도커 볼륨을 사용해야한다.
+
+### 볼륨을 활용해서 MySQL 실행시켜보기
+```bash
+# 1.
+
+docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=qwer1234! -v [호스트 절대경로]:[컨테이너 절대경로] mysql
+
+
+# windows 환경에서 경로 주의
+#     ex) C:/development/docker-mysql/mysql-data:/var/lib/mysql
+
+# 최초에 환경 변수가 볼륨에 저장되었기 때문에, 환경변수를 바꾸려면 mysql 내부에서 직접 바꿔야함
+
+# options :
+#     -v : 볼륨 생성(도커 볼륨 명령어 참고)
+
 ```
