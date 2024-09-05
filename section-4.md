@@ -161,4 +161,7 @@ COPY ./ ./
 EXPOSE 3000 # 3000번 포트에서 해당 이미지 컨테이너가 실행된다고 명시함.
 
 ENTRYPOINT ["/bin/bash","-c","sleep 500"]
+```
 
+## Memo
+이미지 태그에 alpine은 이미지 크기를 최소화한 버전인데, 되도록 프로덕션에서는 alpine이 좋은 듯
