@@ -149,3 +149,16 @@ ENTRYPOINT ["/bin/bash","-c","sleep 500"]
 
 EXPOSE [포트번호]
 ```
+```Docker
+# Dockerfile
+
+FROM ubuntu
+
+WORKDIR /my-app
+
+COPY ./ ./
+
+EXPOSE 3000 # 3000번 포트에서 해당 이미지 컨테이너가 실행된다고 명시함.
+
+ENTRYPOINT ["/bin/bash","-c","sleep 500"]
+
